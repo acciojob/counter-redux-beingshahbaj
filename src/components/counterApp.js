@@ -1,5 +1,6 @@
 import React from "react";
-import { useDispatch , useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { increment, decrement } from "./app/actions";
 
 const Counterpp =() => {
   const counter = useSelector((state) => state.counter);
@@ -7,8 +8,8 @@ const Counterpp =() => {
   return (
     <div>
       <h1>Counter: {counter}</h1>
-      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
-      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+      <button onClick={()=>dispatch(increment())}>Increment</button>
+      <button onClick={() => dispatch(decrement())}>Decrement</button>
     </div>
   );
 }
